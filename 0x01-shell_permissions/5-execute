@@ -1,2 +1,2 @@
-C#!/bin/bash
-chmod a+x hello
+#!/bin/bash
+chmod u+x hello
