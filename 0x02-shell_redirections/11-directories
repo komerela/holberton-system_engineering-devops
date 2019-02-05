@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lRa | grep -c ^..
+ls -ap | egrep -c "^\..*/$"
