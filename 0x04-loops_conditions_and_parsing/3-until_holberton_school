@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+	COUNTER=20
+	until [ $COUNTER -lt 11 ]; do
+             echo "Holberton School"
+             let COUNTER-=1
+        done
