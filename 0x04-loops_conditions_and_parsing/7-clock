@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Script displays time in hours and minutes
+
+hour=0
+while [ "$hour" -lt 13 ];
+do
+	echo "Hour: $hour"
+	min=1
+	while [ "$min" -lt 60 ];
+	do
+		echo $min
+		((min++))
+	done
+	((hour++))
+done
