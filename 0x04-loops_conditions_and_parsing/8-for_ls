@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# Bash script that displays content of cwd
 for i in *; do
 	echo "$i" | cut -f2 -d'-'
 done
