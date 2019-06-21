@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Print string 10 times using until
 
 	COUNTER=20
 	until [ $COUNTER -lt 11 ]; do
