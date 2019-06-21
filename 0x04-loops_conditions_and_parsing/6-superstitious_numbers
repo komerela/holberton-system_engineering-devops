@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# Prints numbers using the case statements
 n=1
 while [ $n -lt 21 ]
 do
