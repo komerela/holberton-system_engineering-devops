@@ -3,7 +3,8 @@
 
 FILE=holbertonschool
 
-if [ -f "$FILE" ]; then
+if [ -e "$FILE" ];
+then
 	echo "$FILE file exists"
 else
 	echo "$FILE file does not exist"
