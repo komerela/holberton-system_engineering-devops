@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Script displays string then sleep then sigterm
+
+i=0
+trap 'echo "I am invincible!!!"' SIGTERM
+while [ $i ];
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
