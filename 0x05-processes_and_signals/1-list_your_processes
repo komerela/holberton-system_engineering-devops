@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Bash script that lists all processes in precedence
 
-ps -e u
+ps -axuf
