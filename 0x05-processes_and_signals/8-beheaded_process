@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash script to terminate processes
+
+behead=$(pgrep -f './7-highlander')
+kill -s SIGKILL "$behead"
