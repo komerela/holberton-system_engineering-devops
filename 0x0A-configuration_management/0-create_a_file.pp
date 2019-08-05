@@ -1,3 +1,4 @@
+# puppet script creates new file with content
 file { '/tmp/holberton':
   content => 'I love Puppet',
   mode => '0744',
