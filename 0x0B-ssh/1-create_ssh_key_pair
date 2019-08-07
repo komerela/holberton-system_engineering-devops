@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Creates RSA key pair names they private key & adds password
+ssh-keygen -b 4096 -f holberton -N betty
