@@ -27,8 +27,7 @@ defaults
 	mode	http
 	option	httplog
 	option	dontlognull
-	option forwardfor
-	option http-server-close
+	option  forwardfor
         timeout connect 5000
         timeout client  50000
         timeout server  50000
@@ -41,22 +40,17 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 
 frontend www-http
-   bind *:80
-   reqadd X-Forwarded-Proto:\ http
-   default_backend www-backend
+	bind *:80
+	reqadd X-Forwarded-Proto:\ http
+	default_backend web-backend
 
 frontend www-https
-   bind *:443 ssl crt /etc/haproxy/certs/koome.tech.pem
-   reqadd X-Forwarded-Proto:\ https
-   acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-   use_backend letsencrypt-backend if letsencrypt-acl
-   default_backend www-backend
+	bind *:443 ssl crt /etc/haproxy/ssl/www.koome.tech.pem
+	reqadd X-Forwarded-Proto:\ https
+	default_backend web-backend
 
-backend www-backend
-   redirect scheme https if !{ ssl_fc }
-   balance roundrobin
-   server 698-web-01 34.73.218.30:80 check
-   server 698-web-02 35.196.224.3:80 check
-
-backend letsencrypt-backend
-   server letsencrypt 127.0.0.1:54321
+backend web-backend
+	redirect scheme https if !{ ssl_fc }
+	balance roundrobin
+	server 698-web-01  34.73.218.30:80 check
+	server 698-web-02  35.196.224.3:80 check
