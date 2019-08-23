@@ -40,27 +40,17 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-frontend haproxynode
-	bind *:80
-	mode http
-	default_backend backendnodes
-	
 frontend www-http
    bind 34.73.41.65:80
    reqadd X-Forwarded-Proto:\ http
    default_backend www-backend
 
 frontend www-https
-   bind 34.73.41.65:443 ssl crt /etc/haproxy/certs/www.koome.tech.com.pem
+   bind 34.73.41.65:443 ssl crt /etc/haproxy/certs/koome.tech.pem
    reqadd X-Forwarded-Proto:\ https
    acl letsencrypt-acl path_beg /.well-known/acme-challenge/
    use_backend letsencrypt-backend if letsencrypt-acl
    default_backend www-backend
-
-backend backendnodes
-	balance roundrobin
-	server 698-web-01 34.73.218.30:80 check
-	server 698-web-02 35.196.224.3:80 check
 
 backend www-backend
    redirect scheme https if !{ ssl_fc }
