@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Configure domain zone so that the subdomain www points to load balancer
+
+print ()
+{
+	dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk '{ split ($1, sd, ".");
+		       print "The subdomain "sd[1]" is a "$4" record and points to "$5"" }' |
+	       	tail -n 1
+}
+
+if [ $# -eq 2 ]
+then
+	print "$1" "$2"
+else
+	declare -a server_array=("www" "lb-01" "web-01" "web-02")
+
+	for i in "${server_array[@]}"
+	do
+		print "$1" "$i"
+	done
+fi
