@@ -1,0 +1,6 @@
+#!usr/bin/env bash
+#Refactor code to 7 lines or less
+pkill apache2
+chmod 755 /etc/nginx/nginx.conf
+sed -i 's/\b80\b/&80/' /etc/nginx/sites-availa
+
