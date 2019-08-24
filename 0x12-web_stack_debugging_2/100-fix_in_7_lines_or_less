@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Refactored script to run nginx as the nginx user
-chmod 755 /etc/nginx/nginx.conf
+chmod 777 /etc/nginx/nginx.conf
 pkill apache2
-sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+sed -i 's/\b80\b/&80/' /etc/nginx/sites-available/default
 sudo -u nginx service nginx start
