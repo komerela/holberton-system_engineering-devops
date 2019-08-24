@@ -1,6 +1,6 @@
-#!usr/bin/env bash
-#Refactor code to 7 lines or less
+#!/usr/bin/env bash
+# run nginx as the nginx user
+chmod 777 /etc/nginx/nginx.conf
 pkill apache2
-chmod 755 /etc/nginx/nginx.conf
-sed -i 's/\b80\b/&80/' /etc/nginx/sites-availa
-
+sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+sudo -u nginx bash -c "service nginx restart"

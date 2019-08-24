@@ -1,4 +1,4 @@
-#!usr/bin/env bash
+#!/usr/bin/env bash
 # run nginx as the nginx user
 chmod 777 /etc/nginx/nginx.conf
 pkill apache2
