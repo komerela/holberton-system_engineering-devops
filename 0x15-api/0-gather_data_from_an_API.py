@@ -23,7 +23,7 @@ if __name__ == "__main__":
         if task.get('completed') is True:
             com_tasks.append(task)
 
-    print("Employee {} is done with tasks ({}/{}):"
+    print("Employee {} is done with tasks({}/{}):"
           .format(employee, len(com_tasks), all_tasks))
 
     for task in com_tasks:
