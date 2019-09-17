@@ -2,11 +2,10 @@
 """
 using this REST API, for a given ID, returns info about his/her TODO list
 """
-import urllib
 import requests
 import sys
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
     url_todos = 'https://jsonplaceholder.typicode.com/todos/'
     url_users = 'https://jsonplaceholder.typicode.com/users/'
