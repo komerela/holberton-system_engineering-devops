@@ -15,7 +15,7 @@ import requests
 #    body = body.decode('UTF-8')
 #    body = body.split('\n')
 #    <td class="tod"' is where the info about the subs is.
-#    body = [line for line in body if '<td class="tod"' in line] 
+#   body = [line for line in body if '<td class="tod"' in line]
 #    2D list, 3 attributes in inner lists - Rank, Subreddit URL and sub count
 #    subredditInfo = []
 #    for i in range(0, len(body), 3):
