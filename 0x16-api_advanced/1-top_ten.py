@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-import sys
+"""
+prints titles of first 10 hot posts on reddit
+"""
 import requests
 
 
 def top_ten(subreddit):
     """
-    prints the titles of the first 10 hot posts listed for a given subreddit
+    prints the titles of the first 10 hot posts listed for
     """
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     user_agent = {'User-Agent': 'Koome@holberton'}
